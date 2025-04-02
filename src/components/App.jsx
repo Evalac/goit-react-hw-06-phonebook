@@ -1,16 +1,26 @@
+import { Routes, Route, NavLink } from 'react-router-dom';
+import Home from './Pages/Home';
+import ContactBook from './Pages/ContactBook';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="contactBook">Contact-book</NavLink>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="contactBook" element={<ContactBook />} />
+      </Routes>
     </div>
   );
 };
