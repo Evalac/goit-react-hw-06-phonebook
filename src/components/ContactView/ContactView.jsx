@@ -1,10 +1,18 @@
+import { useSelector } from 'react-redux';
+
 export default function ContactView() {
+  const contacts = useSelector(state => state.contactBook.contacts);
+
   return (
     <ul>
-      <li>
-        Тут буде імʼя контакту: 073-425-323-323
-        <button type="button">Delete</button>
-      </li>
+      {contacts.map(contact => (
+        <li key={contact.id}>
+          <p>
+            {contact.name}:{contact.number}
+          </p>
+          <button type="button">Delete</button>
+        </li>
+      ))}
     </ul>
   );
 }
