@@ -1,3 +1,5 @@
+import { addContact, deleteContact } from './actions';
+
 const initialState = {
   contacts: [
     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -8,4 +10,18 @@ const initialState = {
   filter: '',
 };
 
-export const contactReducer = (state = initialState, action) => state;
+export const contactReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'contacts/AddContact':
+      console.log('ADD', action.payload);
+      console.log('state: ', state);
+
+      return {
+        ...state,
+        contacts: [...state.contacts, action.payload],
+      };
+
+    default:
+      return state;
+  }
+};
