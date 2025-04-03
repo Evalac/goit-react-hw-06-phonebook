@@ -1,7 +1,10 @@
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../Redux/actions';
 
 export default function ContactView() {
   const contacts = useSelector(state => state.contactBook.contacts);
+  const dispatch = useDispatch();
 
   return (
     <ul>
@@ -16,3 +19,13 @@ export default function ContactView() {
     </ul>
   );
 }
+
+// onClick={dispatch(deleteContact(contact.id))}
+// export const deleteContact = createAction(
+//   'contacts/DeleteContact',
+//   contactId => {
+//     return {
+//       payload: contactId,
+//     };
+//   }
+// );

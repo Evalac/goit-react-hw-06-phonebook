@@ -15,11 +15,13 @@ export const contactReducer = (state = initialState, action) => {
     case 'contacts/AddContact':
       console.log('ADD', action.payload);
       console.log('state: ', state);
-
       return {
         ...state,
         contacts: [...state.contacts, action.payload],
       };
+
+    case 'contacts/DeleteContact':
+      return state.contacts.filter(state => state.id !== action.payload);
 
     default:
       return state;
