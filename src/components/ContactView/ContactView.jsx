@@ -4,11 +4,19 @@ import { deleteContact } from '../../Redux/actions';
 
 export default function ContactView() {
   const contacts = useSelector(state => state.contactBook.contacts);
+  const filter = useSelector(state => state.contactBook.filter);
+
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  console.log(filteredContacts);
+
   const dispatch = useDispatch();
 
   return (
     <ul>
-      {contacts.map(contact => (
+      {filteredContacts.map(contact => (
         <li key={contact.id}>
           <p>
             {contact.name}:{contact.number}
