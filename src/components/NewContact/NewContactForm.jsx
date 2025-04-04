@@ -8,16 +8,13 @@ export default function NewContactForm() {
     number: '',
   });
   const dispatch = useDispatch();
-  const onSubmit = e => {};
+  const onSubmit = e => {
+    e.preventDefault();
+    dispatch(addContact(contact));
+    setContact({ name: '', number: '' });
+  };
   return (
-    <form
-      action=""
-      onSubmit={e => {
-        e.preventDefault();
-        dispatch(addContact(contact));
-        setContact({ name: '', number: '' });
-      }}
-    >
+    <form action="" onSubmit={onSubmit}>
       <label>
         Name
         <input

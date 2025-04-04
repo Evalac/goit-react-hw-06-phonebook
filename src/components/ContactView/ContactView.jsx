@@ -13,7 +13,14 @@ export default function ContactView() {
           <p>
             {contact.name}:{contact.number}
           </p>
-          <button type="button">Delete</button>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch(deleteContact(contact.id));
+            }}
+          >
+            Delete
+          </button>
         </li>
       ))}
     </ul>
