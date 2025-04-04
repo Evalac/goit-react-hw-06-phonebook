@@ -10,8 +10,6 @@ export default function ContactView() {
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
 
-  console.log(filteredContacts);
-
   const dispatch = useDispatch();
 
   return (

@@ -34,7 +34,7 @@ export const contactReducer = createReducer(initialState, builder => {
     })
     .addCase(deleteContact, (state, action) => {
       const index = state.contacts.findIndex(
-        contact => contact.id !== action.payload
+        contact => contact.id === action.payload
       );
       state.contacts.splice(index, 1);
     })
@@ -42,10 +42,3 @@ export const contactReducer = createReducer(initialState, builder => {
       state.filter = action.payload;
     });
 });
-
-//   ...state,
-//       contacts: [...state.contacts, action.payload],
-//   return {
-//     ...state,
-//     contacts: state.contacts.filter(contact => contact.id !== action.payload),
-//   };
