@@ -1,3 +1,5 @@
+import css from './FindContactInput.module.css';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { findContact } from '../../Redux/actions';
 
@@ -6,10 +8,11 @@ export default function FindContactInput(params) {
   const dispatch = useDispatch();
 
   return (
-    <form>
-      <label>
+    <form className={css.form}>
+      <label className={css.label}>
         Find contacts by name
         <input
+          className={css.input}
           type="text"
           name="text"
           onChange={e => {

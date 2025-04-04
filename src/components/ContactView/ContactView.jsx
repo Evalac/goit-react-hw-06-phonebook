@@ -19,7 +19,7 @@ export default function ContactView() {
       {filteredContacts.map(contact => (
         <li className={css.contact_list_item} key={contact.id}>
           <p className={css.contact_list_item_text}>
-            {contact.name}:{contact.number}
+            {contact.name}: {contact.number}
           </p>
           <button
             className={css.contact_list_item_button}
