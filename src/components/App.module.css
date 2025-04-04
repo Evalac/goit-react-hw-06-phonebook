@@ -1,0 +1,27 @@
+.container {
+  max-width: 500px;
+  border: solid 1px darkorange;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header_app {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  max-width: 100%;
+  background-color: blanchedalmond;
+  border-radius: 5px;
+}
+
+.nav_menu_list {
+  display: flex;
+  margin-left: 10px;
+}
+
+.nav_menu_list_item {
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

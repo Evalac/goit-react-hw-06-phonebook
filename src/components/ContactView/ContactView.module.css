@@ -1,0 +1,9 @@
+.contact_list_item {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 2px solid rgb(57, 133, 246);
+  border-radius: 5px;
+}

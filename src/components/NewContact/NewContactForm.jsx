@@ -1,3 +1,5 @@
+import css from './NewContactForm.module.css';
+
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../Redux/actions';
 import { useState } from 'react';
@@ -14,10 +16,11 @@ export default function NewContactForm() {
     setContact({ name: '', number: '' });
   };
   return (
-    <form action="" onSubmit={onSubmit}>
-      <label>
+    <form className={css.form} action="" onSubmit={onSubmit}>
+      <label className={css.label}>
         Name
         <input
+          className={css.input}
           onChange={e => {
             setContact(prev => ({ ...prev, name: e.target.value }));
           }}
@@ -29,9 +32,10 @@ export default function NewContactForm() {
           required
         />
       </label>
-      <label>
+      <label className={css.label}>
         Number
         <input
+          className={css.input}
           onChange={e => {
             setContact(prev => ({ ...prev, number: e.target.value }));
           }}
@@ -43,7 +47,9 @@ export default function NewContactForm() {
           required
         />
       </label>
-      <button type="submit">Add contact</button>
+      <button className={css.button} type="submit">
+        Add contact
+      </button>
     </form>
   );
 }
