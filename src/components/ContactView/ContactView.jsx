@@ -2,7 +2,7 @@ import css from './ContactView.module.css';
 
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../Redux/actions';
+import { deleteContact } from '../../Redux/contactSlice';
 
 export default function ContactView() {
   const contacts = useSelector(state => state.contactBook.contacts);
@@ -35,13 +35,3 @@ export default function ContactView() {
     </ul>
   );
 }
-
-// onClick={dispatch(deleteContact(contact.id))}
-// export const deleteContact = createAction(
-//   'contacts/DeleteContact',
-//   contactId => {
-//     return {
-//       payload: contactId,
-//     };
-//   }
-// );

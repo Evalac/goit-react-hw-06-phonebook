@@ -1,7 +1,7 @@
 import css from './FindContactInput.module.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { findContact } from '../../Redux/actions';
+import { findContact } from '../../Redux/contactSlice';
 
 export default function FindContactInput(params) {
   const filter = useSelector(state => state.contactBook.filter);
